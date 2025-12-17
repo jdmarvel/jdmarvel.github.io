@@ -1,0 +1,893 @@
+:root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --primary: #ff6b35;
+    --secondary: #f7931e;
+    --accent: #00d9ff;
+    --gray-dark: #2a2a2a;
+    --gray: #4a4a4a;
+    --gray-light: #e5e5e5;
+    --bg: #fafafa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--black);
+    border-bottom: 6px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+}
+
+.logo-bracket {
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+.logo:hover .logo-text {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0;
+    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 1.5rem;
+    top: 0.75rem;
+    color: var(--primary);
+    opacity: 0;
+    transform: translate(-3px, -3px);
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover::before {
+    opacity: 1;
+}
+
+.nav-menu a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--white) 0%, var(--bg) 100%);
+}
+
+.hero-bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.08;
+}
+
+.shape-1 {
+    width: 600px;
+    height: 600px;
+    background: var(--primary);
+    top: -200px;
+    right: -100px;
+    transform: rotate(45deg);
+    animation: float 20s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent);
+    bottom: -150px;
+    left: -100px;
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary);
+    top: 50%;
+    left: 30%;
+    transform: rotate(30deg);
+    animation: float 25s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(-30px) rotate(55deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 3px solid var(--primary);
+    background: var(--white);
+    transform: rotate(-2deg);
+    animation: slideInLeft 1s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px) rotate(-2deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(-2deg);
+    }
+}
+
+.hero-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 7rem;
+    line-height: 0.9;
+    color: var(--black);
+    margin-bottom: 3rem;
+    letter-spacing: -0.03em;
+}
+
+.title-line {
+    display: block;
+    animation: slideInRight 1s ease;
+    animation-fill-mode: both;
+}
+
+.title-line:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.highlight-box {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0 0.3em;
+    display: inline-block;
+    transform: skew(-5deg);
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+.highlight-box span {
+    display: inline-block;
+    transform: skew(5deg);
+}
+
+.hero-subtitle {
+    margin-bottom: 4rem;
+    animation: fadeIn 1s ease 0.6s both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.subtitle-box {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    border: 5px solid var(--accent);
+    box-shadow: 12px 12px 0 rgba(0, 217, 255, 0.3);
+}
+
+.subtitle-box p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 4rem;
+    animation: fadeIn 1s ease 0.8s both;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 3.5rem;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Section Styling */
+section {
+    padding: 6rem 0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.section-number {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.3;
+}
+
+.section-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 4rem;
+    color: var(--black);
+    letter-spacing: -0.02em;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 120px;
+    height: 8px;
+    background: var(--primary);
+}
+
+/* About Section */
+.section-about {
+    background: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.text-block p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+}
+
+.lead-text {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    color: var(--black) !important;
+    line-height: 1.4;
+}
+
+.about-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-box {
+    background: var(--bg);
+    padding: 2rem;
+    border: 4px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+}
+
+.info-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+}
+
+.info-content {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    line-height: 1.8;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    margin: 0.25rem;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--primary);
+}
+
+/* Research Section */
+.section-research {
+    background: var(--black);
+    color: var(--white);
+}
+
+.section-research .section-number {
+    color: var(--primary);
+    opacity: 1;
+}
+
+.section-research .section-title {
+    color: var(--white);
+}
+
+.section-research .section-title::after {
+    background: var(--accent);
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.research-card {
+    background: var(--gray-dark);
+    padding: 2.5rem;
+    border: 4px solid var(--primary);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0 var(--primary);
+}
+
+.card-1 { border-color: var(--primary); }
+.card-2 { border-color: var(--accent); }
+.card-3 { border-color: var(--secondary); }
+.card-4 { border-color: var(--primary); }
+
+.card-1:hover { box-shadow: 15px 15px 0 var(--primary); }
+.card-2:hover { box-shadow: 15px 15px 0 var(--accent); }
+.card-3:hover { box-shadow: 15px 15px 0 var(--secondary); }
+.card-4:hover { box-shadow: 15px 15px 0 var(--primary); }
+
+.card-number {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+}
+
+.card-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--accent);
+    background: rgba(0, 217, 255, 0.1);
+}
+
+/* Publications Section */
+.section-publications {
+    background: var(--bg);
+}
+
+.publications-intro {
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    color: var(--gray);
+}
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pub-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--white);
+    border-left: 6px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.pub-item:hover {
+    transform: translateX(10px);
+    box-shadow: -10px 10px 0 rgba(255, 107, 53, 0.2);
+}
+
+.pub-year {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2rem;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.pub-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.pub-venue {
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.pub-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.pub-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--black);
+    padding: 0.3rem 0.6rem;
+    letter-spacing: 0.1em;
+}
+
+.pub-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pub-link:hover {
+    color: var(--accent);
+}
+
+.publications-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: var(--black);
+    color: var(--white);
+}
+
+.btn-view-all {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 3px solid var(--primary);
+    background: transparent;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-view-all:hover {
+    background: var(--primary);
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 rgba(255, 107, 53, 0.3);
+}
+
+.external-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.external-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.external-link:hover {
+    color: var(--white);
+}
+
+/* Teaching Section */
+.section-teaching {
+    background: var(--white);
+}
+
+.teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+}
+
+.course-card {
+    background: var(--bg);
+    padding: 2.5rem;
+    border: 5px solid var(--black);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: var(--primary);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.course-card:hover::before {
+    opacity: 1;
+}
+
+.course-card:hover {
+    transform: translate(-5px, -5px);
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.course-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+}
+
+.course-level {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--black);
+    padding: 0.3rem 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+.course-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.course-description {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.course-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.topic {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--black);
+    background: var(--white);
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--black);
+    letter-spacing: 0.05em;
+}
+
+/* Contact Section */
+.section-contact {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.section-contact .section-number {
+    color: var(--white);
+    opacity: 0.3;
+}
+
+.section-contact .section-title {
+    color: var(--white);
+}
+
+.section-contact .section-title::after {
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-box {
+    background: var(--white);
+    padding: 2rem;
+    border: 5px solid var(--black);
+    box-shadow: 10px 10px 0 var(--black);
+}
+
+.contact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+}
+
+.contact-value {
+    font-size: 1.1rem;
+    color: var(--black);
+    line-height: 1.8;
+}
+
+.contact-value a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contact-value a:hover {
+    color: var(--primary);
+}
+
+.link-section {
+    background: var(--black);
+    padding: 2rem;
+    border: 5px solid var(--white);
+}
+
+.link-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+}
+
+.profile-link {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    padding-left: 0;
+}
+
+.profile-link:hover {
+    color: var(--accent);
+    padding-left: 10px;
+}
+
+/* Footer */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 2rem 0;
+    border-top: 6px solid var(--primary);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 5rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .research-grid,
+    .teaching-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 0.5rem;
+    }
+    
+    .nav-menu a {
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .pub-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .publications-footer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .teaching-grid {
+        grid-template-columns: 1fr;
+    }
+}
