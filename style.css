@@ -259,6 +259,15 @@ a:hover {
     text-decoration: underline;
 }
 
+.paper-note {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666;
+    margin-top: 6px;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
 /* Books I Like */
 .books-grid {
     display: grid;
