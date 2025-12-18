@@ -199,13 +199,13 @@ a:hover {
 
 .pub-title {
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     color: #111;
 }
 
 .pub-venue {
     color: #666;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-size: 0.95rem;
 }
 
