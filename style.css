@@ -46,12 +46,6 @@ body {
     flex: 1;
 }
 
-.site-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #111;
-}
 
 .nav {
     display: flex;
@@ -75,9 +69,12 @@ body {
 }
 
 .site-title {
-    /* your existing styles */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #111;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
 }
 
 .section-title {
@@ -86,7 +83,7 @@ body {
     margin-bottom: 20px;
     color: #111;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
 }
 
 .content {
