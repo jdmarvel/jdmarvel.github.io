@@ -205,6 +205,7 @@ a:hover {
 
 .pub-venue {
     color: #666;
+    margin-top: 0;
     margin-bottom: 2px;
     font-size: 0.95rem;
 }
