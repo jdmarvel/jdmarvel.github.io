@@ -190,6 +190,7 @@ a:hover {
     font-size: 0.9rem;
     color: #666;
     font-style: italic;
+    line-height: 1.4;
 }
 
 /* Publications */
@@ -226,7 +227,7 @@ a:hover {
     color: #666;
     margin-top: 5px;
     margin-bottom: 10px;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 /* Courses */
@@ -281,7 +282,7 @@ a:hover {
     color: #666;
     margin-top: 3px;  /* Changed from 6px */
     margin-bottom: 0;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* Books I Like */
