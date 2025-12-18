@@ -194,20 +194,22 @@ a:hover {
 
 /* Publications */
 .publication {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
-.pub-title {
+.content .pub-title {
     font-weight: 500;
-    margin-bottom: 0px;
+    margin-bottom: 3px;
     color: #111;
+    line-height: 1.4;
 }
 
-.pub-venue {
+.content .pub-venue {
     color: #666;
     margin-top: 0;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
     font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .pub-links {
@@ -219,10 +221,11 @@ a:hover {
     margin-right: 8px;
 }
 
-.pub-description {
+.content .pub-description {
     font-size: 0.9em;
     color: #666;
-    margin-top: 0em;
+    margin-top: 5px;
+    margin-bottom: 10px;
     line-height: 1.6;
 }
 
