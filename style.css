@@ -633,3 +633,18 @@ a:hover {
 .item-content.expanded::after {
     display: none;
 }
+
+/* Highlighted borders for expanded items */
+.paper-item .paper-header.expanded {
+    border-left: 3px solid #0066cc;
+    padding-left: 0.5rem;
+}
+
+.collapsible-item:has(.item-header.expanded) {
+    border-color: #0066cc;
+    border-width: 2px;
+}
+
+.section-header-expandable.expanded {
+    border: 2px solid #0066cc;
+}
