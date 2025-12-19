@@ -476,7 +476,7 @@ a:hover {
     left: 0;
     right: 0;
     height: 2em;
-    background: linear-gradient(to bottom, transparent, white);
+    background: linear-gradient(to bottom, transparent, rgba(0, 102, 204, 0.05));
     pointer-events: none;
 }
 
@@ -543,7 +543,7 @@ a:hover {
     left: 0;
     right: 0;
     height: 120px;
-    background: linear-gradient(to bottom, transparent, white);
+    background: linear-gradient(to bottom, transparent, rgba(0, 102, 204, 0.05));
     pointer-events: none;
 }
 
@@ -621,7 +621,7 @@ a:hover {
     left: 0;
     right: 0;
     height: 2em;
-    background: linear-gradient(to bottom, transparent, white);
+    background: linear-gradient(to bottom, transparent, rgba(0, 102, 204, 0.05));
     pointer-events: none;
 }
 
