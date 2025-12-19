@@ -634,17 +634,25 @@ a:hover {
     display: none;
 }
 
-/* Highlighted borders for expanded items */
+/* Highlighted borders for expanded items with hover effect */
 .paper-item .paper-header.expanded {
     border-left: 3px solid #0066cc;
+    padding-left: 0.5rem;
+}
+
+.paper-item:has(.paper-header.expanded) {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding-left: 0.5rem;
 }
 
 .collapsible-item:has(.item-header.expanded) {
     border-color: #0066cc;
     border-width: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
 }
 
 .section-header-expandable.expanded {
     border: 2px solid #0066cc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
