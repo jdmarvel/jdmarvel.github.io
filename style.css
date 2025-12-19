@@ -529,11 +529,29 @@ a:hover {
 }
 
 .section-content {
-    max-height: 0;
+    max-height: 280px; /* Shows approximately first row of books */
     overflow: hidden;
     transition: max-height 0.5s ease;
+    position: relative;
+}
+
+/* Fade effect at bottom of collapsed content */
+.section-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, white);
+    pointer-events: none;
 }
 
 .section-content.expanded {
     max-height: 3000px;
+}
+
+/* Remove fade effect when expanded */
+.section-content.expanded::after {
+    display: none;
 }
