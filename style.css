@@ -15,6 +15,7 @@ body {
     color: #333;
     background: #fff;
     -webkit-font-smoothing: antialiased;
+    font-weight: 500; 
 }
 
 .container {
