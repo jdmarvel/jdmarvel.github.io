@@ -634,6 +634,20 @@ a:hover {
     display: none;
 }
 
+
+/* Faint blue background for collapsed preview areas */
+.paper-content:not(.expanded) {
+    background-color: rgba(0, 102, 204, 0.03);
+}
+
+.section-content:not(.expanded) {
+    background-color: rgba(0, 102, 204, 0.03);
+}
+
+.item-content:not(.expanded) {
+    background-color: rgba(0, 102, 204, 0.03);
+}
+
 /* Highlighted borders for expanded items with hover effect */
 .paper-item .paper-header.expanded {
     border-left: 3px solid #0066cc;
