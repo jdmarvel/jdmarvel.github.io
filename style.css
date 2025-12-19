@@ -592,6 +592,18 @@ a:hover {
     flex: 1;
 }
 
+.item-header .expand-icon {
+    font-weight: bold;
+    color: #666;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.item-header.expanded .expand-icon {
+    transform: rotate(45deg);
+}
+
 .item-content {
     max-height: 3em; /* Shows about 2 lines as preview */
     overflow: hidden;
