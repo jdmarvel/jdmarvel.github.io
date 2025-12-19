@@ -83,3 +83,18 @@ function toggleSection(header) {
         header.classList.add('expanded');
     }
 }
+
+
+// Generic item toggle function (for projects, publications, courses)
+function toggleItem(header) {
+    const content = header.nextElementSibling;
+    const isExpanded = content.classList.contains('expanded');
+    
+    if (isExpanded) {
+        content.classList.remove('expanded');
+        header.classList.remove('expanded');
+    } else {
+        content.classList.add('expanded');
+        header.classList.add('expanded');
+    }
+}
