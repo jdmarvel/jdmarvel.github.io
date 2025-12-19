@@ -670,3 +670,18 @@ a:hover {
     border: 2px solid #0066cc;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Darker text for expanded items */
+.paper-content.expanded .pub-description,
+.paper-content.expanded .paper-note {
+    color: #222;
+}
+
+.item-content.expanded .pub-description,
+.item-content.expanded p {
+    color: #222;
+}
+
+.section-content.expanded {
+    color: #222;
+}
