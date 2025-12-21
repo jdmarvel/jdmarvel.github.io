@@ -105,3 +105,34 @@ function toggleAbout(section) {
         section.classList.add('expanded');
     }
 }
+
+
+// Paper item toggle function (for entire paper item)
+function togglePaperItem(paperItem) {
+    const header = paperItem.querySelector('.paper-header');
+    const content = paperItem.querySelector('.paper-content');
+    const isExpanded = content.classList.contains('expanded');
+    
+    if (isExpanded) {
+        content.classList.remove('expanded');
+        header.classList.remove('expanded');
+    } else {
+        content.classList.add('expanded');
+        header.classList.add('expanded');
+    }
+}
+
+// Collapsible item toggle function (for entire collapsible item)
+function toggleCollapsibleItem(item) {
+    const header = item.querySelector('.item-header');
+    const content = item.querySelector('.item-content');
+    const isExpanded = content.classList.contains('expanded');
+    
+    if (isExpanded) {
+        content.classList.remove('expanded');
+        header.classList.remove('expanded');
+    } else {
+        content.classList.add('expanded');
+        header.classList.add('expanded');
+    }
+}
