@@ -434,6 +434,7 @@ a:hover {
     margin-bottom: 1rem;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 .paper-header {
@@ -842,6 +843,7 @@ a:hover {
 .collapsible-item {
     position: relative;
     padding-bottom: 2.5rem !important;
+    cursor: pointer;
 }
 
 /* Hide the + icons */
@@ -849,3 +851,8 @@ a:hover {
     display: none;
 }
 
+
+/* Make cursor a pointer for clickable items */
+.paper-item {
+    cursor: pointer;
+}
