@@ -848,3 +848,75 @@ a:hover {
 .expand-icon {
     display: none;
 }
+
+/* Collapsible section styling */
+.section-header-expandable {
+    display: none; /* Hide the old button */
+}
+
+.section-content {
+    max-height: 280px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    position: relative;
+    cursor: pointer;
+    background-color: rgba(0, 102, 204, 0.03);
+    padding: 1rem;
+    padding-bottom: 2.5rem; /* Extra space for arrow */
+    border-radius: 4px;
+}
+
+.section-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 102, 204, 0.05));
+    pointer-events: none;
+}
+
+/* Down arrow indicator when collapsed */
+#books-i-like .section-content:not(.expanded)::before {
+    content: '▼';
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+/* Up arrow when expanded */
+#books-i-like .section-content.expanded::before {
+    content: '▲';
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+.section-content.expanded {
+    max-height: 3000px;
+    border: 2px solid #0066cc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.section-content.expanded::after {
+    display: none;
+}
+
+.section-content.expanded {
+    color: #222;
+}
+
+.section-content:hover:not(.expanded) {
+    background-color: rgba(0, 102, 204, 0.05);
+}
