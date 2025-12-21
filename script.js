@@ -98,3 +98,17 @@ function toggleItem(header) {
         header.classList.add('expanded');
     }
 }
+
+// About section toggle function
+function toggleAbout(button) {
+    const content = button.nextElementSibling;
+    const isExpanded = content.classList.contains('expanded');
+    
+    if (isExpanded) {
+        content.classList.remove('expanded');
+        button.classList.remove('expanded');
+    } else {
+        content.classList.add('expanded');
+        button.classList.add('expanded');
+    }
+}
