@@ -494,49 +494,21 @@ a:hover {
 
 /* Collapsible section styling */
 .section-header-expandable {
-    cursor: pointer;
-    padding: 0.75rem;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    transition: background-color 0.2s ease;
-}
-
-.section-header-expandable:hover {
-    background-color: #e8e8e8;
-}
-
-.section-header-expandable .expand-icon {
-    font-weight: bold;
-    color: #666;
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
-}
-
-.section-header-expandable.expanded .expand-icon {
-    transform: rotate(45deg);
-}
-
-.expand-text {
-    color: #666;
-    font-size: 0.95em;
-}
-
-.section-header-expandable.expanded .expand-text::after {
-    content: ' (click to collapse)';
+    display: none; /* Hide the old button */
 }
 
 .section-content {
-    max-height: 280px; /* Shows approximately first row of books */
+    max-height: 280px;
     overflow: hidden;
     transition: max-height 0.5s ease;
     position: relative;
+    cursor: pointer;
+    background-color: rgba(0, 102, 204, 0.03);
+    padding: 1rem;
+    padding-bottom: 2.5rem; /* Extra space for arrow */
+    border-radius: 4px;
 }
 
-/* Fade effect at bottom of collapsed content */
 .section-content::after {
     content: '';
     position: absolute;
@@ -548,13 +520,48 @@ a:hover {
     pointer-events: none;
 }
 
-.section-content.expanded {
-    max-height: 3000px;
+/* Down arrow indicator when collapsed */
+#books-i-like .section-content:not(.expanded)::before {
+    content: '▼';
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+    z-index: 10;
 }
 
-/* Remove fade effect when expanded */
+/* Up arrow when expanded */
+#books-i-like .section-content.expanded::before {
+    content: '▲';
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+.section-content.expanded {
+    max-height: 3000px;
+    border: 2px solid #0066cc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
 .section-content.expanded::after {
     display: none;
+}
+
+.section-content.expanded {
+    color: #222;
+}
+
+.section-content:hover:not(.expanded) {
+    background-color: rgba(0, 102, 204, 0.05);
 }
 
 /* Collapsible items styling (for projects, publications, courses) */
