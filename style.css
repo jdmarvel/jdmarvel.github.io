@@ -776,3 +776,75 @@ a:hover {
 .about-collapsible:hover:not(.expanded) {
     background-color: rgba(0, 102, 204, 0.05);
 }
+
+
+/* Add hover arrows to all collapsible items */
+
+/* Papers - down arrow when collapsed */
+.paper-item:not(:has(.paper-header.expanded)) {
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.paper-item:not(:has(.paper-header.expanded))::after {
+    content: '▼';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.8rem;
+    animation: bounce 2s infinite;
+}
+
+/* Papers - up arrow when expanded */
+.paper-item:has(.paper-header.expanded) {
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.paper-item:has(.paper-header.expanded)::after {
+    content: '▲';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.8rem;
+}
+
+/* Collapsible items (projects, publications, courses) - down arrow when collapsed */
+.collapsible-item:not(:has(.item-header.expanded))::before {
+    content: '▼';
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+/* Collapsible items - up arrow when expanded */
+.collapsible-item:has(.item-header.expanded)::before {
+    content: '▲';
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0066cc;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+/* Make collapsible items position relative for arrow positioning */
+.collapsible-item {
+    position: relative;
+    padding-bottom: 2.5rem !important;
+}
+
+/* Hide the + icons */
+.expand-icon {
+    display: none;
+}
