@@ -112,3 +112,14 @@ function toggleAbout(button) {
         button.classList.add('expanded');
     }
 }
+
+// About section toggle function
+function toggleAbout(section) {
+    const isExpanded = section.classList.contains('expanded');
+    
+    if (isExpanded) {
+        section.classList.remove('expanded');
+    } else {
+        section.classList.add('expanded');
+    }
+}

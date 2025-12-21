@@ -743,3 +743,52 @@ a:hover {
     border: 2px solid #0066cc;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* About section collapsible styling */
+.about-collapsible {
+    cursor: pointer;
+    position: relative;
+}
+
+.about-wrapper {
+    max-height: 8em; /* Shows about 4-5 lines */
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.about-collapsible:not(.expanded) .about-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4em;
+    background: linear-gradient(to bottom, transparent, rgba(0, 102, 204, 0.05));
+    pointer-events: none;
+}
+
+.about-collapsible:not(.expanded) {
+    background-color: rgba(0, 102, 204, 0.03);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.about-collapsible.expanded .about-wrapper {
+    max-height: 1000px;
+}
+
+.about-collapsible.expanded {
+    border: 2px solid #0066cc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.about-collapsible.expanded p {
+    color: #222;
+}
+
+.about-collapsible:hover:not(.expanded) {
+    background-color: rgba(0, 102, 204, 0.05);
+}
