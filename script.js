@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Paper toggle function
 function togglePaper(header) {
     const content = header.nextElementSibling;
+    const paperItem = header.parentElement; // Get the parent .paper-item
     const isExpanded = content.classList.contains('expanded');
     
     if (isExpanded) {
@@ -69,21 +70,16 @@ function togglePaper(header) {
     }
 }
 
-
-// Section toggle function
-function toggleSection(header) {
-    const content = header.nextElementSibling;
-    const isExpanded = content.classList.contains('expanded');
+// Section toggle function (for Books I Like)
+function toggleSection(element) {
+    const isExpanded = element.classList.contains('expanded');
     
     if (isExpanded) {
-        content.classList.remove('expanded');
-        header.classList.remove('expanded');
+        element.classList.remove('expanded');
     } else {
-        content.classList.add('expanded');
-        header.classList.add('expanded');
+        element.classList.add('expanded');
     }
 }
-
 
 // Generic item toggle function (for projects, publications, courses)
 function toggleItem(header) {
@@ -96,20 +92,6 @@ function toggleItem(header) {
     } else {
         content.classList.add('expanded');
         header.classList.add('expanded');
-    }
-}
-
-// About section toggle function
-function toggleAbout(button) {
-    const content = button.nextElementSibling;
-    const isExpanded = content.classList.contains('expanded');
-    
-    if (isExpanded) {
-        content.classList.remove('expanded');
-        button.classList.remove('expanded');
-    } else {
-        content.classList.add('expanded');
-        button.classList.add('expanded');
     }
 }
 
